@@ -5,19 +5,18 @@ import re
 import csv
 import sys
 
-data = sys.stdin.readlines()
-it = iter(data[1:])
+match_line = re.compile("^\[(.*?), (.*)\]\n$")
 
 content = []
 
-while True:
-    try:
+for line in sys.stdin.readlines():
+    print(line)
+    matcher = match_line.match(line)
+    if (matcher):
         content.append({
-            "id": next(it).replace("==>", "").strip(),
-            "value": next(it).replace("==>", "").strip()
+            "id": matcher.group(1),
+            "value": matcher.group(2)
         })
-    except StopIteration:
-        break
 
 # remove various common suffixes from the string
 pattern = re.compile("^(.*?)(ed|ion|ic|ical|y|'s|s)?( film)?$")

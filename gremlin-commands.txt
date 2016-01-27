@@ -1,0 +1,2 @@
+g = TitanFactory.open("/opt/mindmaps/resources/conf/titan-cassandra.properties")
+g.traversal().V().has("ITEM_IDENTIFIER","http://mindmaps.io/genre").in("ISA").values("ITEM_IDENTIFIER", "VALUE").limit(9999999999999)

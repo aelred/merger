@@ -1,0 +1,1 @@
+gremlin.sh < gremlin-commands.txt 2> /dev/null | grep "==>" | python3 grouper.py

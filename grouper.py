@@ -30,9 +30,5 @@ for group, items in itertools.groupby(content, grouper):
     groups[group] += list(items)
 
 for entries in groups.values():
-    # if a group has more than one entry, merge with first entry
     if len(entries) > 1:
-        merge_to = entries[0]
-
-        for entry in entries[1:]:
-            print(merge_to['id'] + ',' + entry['id'])
+        print(",".join([e["id"] for e in entries]))

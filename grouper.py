@@ -10,7 +10,6 @@ match_line = re.compile("^\[(.*?), (.*)\]\n$")
 content = []
 
 for line in sys.stdin.readlines():
-    print(line)
     matcher = match_line.match(line)
     if (matcher):
         content.append({

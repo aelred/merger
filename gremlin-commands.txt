@@ -1,2 +1,2 @@
 g = TitanFactory.open("/opt/mindmaps/resources/conf/titan-cassandra.properties")
-for (v in g.traversal().V().has("ITEM_IDENTIFIER","http://mindmaps.io/keyword").in("ISA").valueMap()) System.out.println(v.get("ITEM_IDENTIFIER") + v.get("VALUE"))
+for (v in g.traversal().V().has("ITEM_IDENTIFIER","http://mindmaps.io/$name").in("ISA").valueMap()) System.out.println(v.get("ITEM_IDENTIFIER") + v.get("VALUE"))

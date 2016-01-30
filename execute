@@ -1,1 +1,6 @@
-gremlin.sh < gremlin-commands.txt 2> /dev/null | python3 grouper.py
+if [ $# -ne 1  ];
+    then echo "first parameter must be concept type"
+    exit 1
+fi
+
+sed -e "s/\$name/$1/g" < gremlin-commands.txt | gremlin.sh 2> /dev/null | python3 grouper.py genre

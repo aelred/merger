@@ -30,5 +30,5 @@ for group, items in itertools.groupby(content, grouper):
     groups[group] += list(items)
 
 for entries in groups.values():
-    if len(entries) > 1:
+    if len(entries) > 1 and any(e["value"].startswith(",") for e in entries) and any(not e["value"].startswith(",") for e in entries):
         print(",".join([e["id"] for e in entries]))

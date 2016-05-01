@@ -18,7 +18,7 @@ for line in sys.stdin.readlines():
         })
 
 # remove various common prefixes/suffixes from the string
-pattern = re.compile("^(, )?(.*?)(ed|ion|ic|ical|y|'s|s)?( film)?$")
+pattern = re.compile("^(, )?(.*?)$")
 
 def grouper(entry):
     preproc = entry['value'].lower().replace('-', ' ')

@@ -22,7 +22,7 @@ pattern = re.compile("^(, )?(.*?)(ed|ion|ic|ical|y|'s|s)?( film)?$")
 
 def grouper(entry):
     preproc = entry['value'].lower().replace('-', ' ')
-    return pattern.match(preproc).group(1)
+    return pattern.match(preproc).group(2)
 
 groups = defaultdict(list)
 
